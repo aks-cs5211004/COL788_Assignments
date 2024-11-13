@@ -1,0 +1,16 @@
+../Core/Src/main.c:65:5:__io_putchar	24	static
+../Core/Src/main.c:87:6:float_to_data2	16	static
+../Core/Src/main.c:111:6:myprintf	16	static
+../Core/Src/main.c:128:5:main	152	static
+../Core/Src/main.c:409:6:SystemClock_Config	136	static
+../Core/Src/main.c:459:13:MX_I2C1_Init	8	static
+../Core/Src/main.c:507:13:MX_SPI2_Init	8	static
+../Core/Src/main.c:545:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:580:13:MX_GPIO_Init	56	static
+../Core/Src/main.c:637:6:sSensor	48	static
+../Core/Src/main.c:664:6:pProcessor	48	static
+../Core/Src/main.c:696:6:sLogger	40	static
+../Core/Src/main.c:749:6:EXTI0_1_IRQHandler	8	static
+../Core/Src/main.c:771:6:sHandler	32	static
+../Core/Src/main.c:797:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:814:6:Error_Handler	8	static,ignoring_inline_asm
