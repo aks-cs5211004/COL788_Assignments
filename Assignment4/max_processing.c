@@ -7,7 +7,7 @@
 const float rThreshold = 0.7;   // Ratio threshold for heartbeat detection
 const float decayRate = 0.02;   // Decay rate for max/min values
 const float thrRate = 0.05;     // Rate to adjust the threshold
-const int minDiff = 10;         // Minimum difference between max and min
+const int minDiff = 50;         // Minimum difference between max and min
 
 // Current values
 float maxValue = 0.0;
@@ -19,10 +19,8 @@ uint32_t lastHeartbeat = 0;
 
 // Last value to detect crossing the threshold
 float lastValue = 0.0;
-const unsigned long kFingerThreshold_0 = 10000;
-bool finger_detected_0 = false;
 
-float calculate_heart_rate(uint32_t latest_red_value) {
+int calculate_heart_rate(uint32_t latest_red_value) {
     float currentValue = latest_red_value;
     maxValue = fmaxf(maxValue, currentValue);
     minValue = fminf(minValue, currentValue);
@@ -30,22 +28,17 @@ float calculate_heart_rate(uint32_t latest_red_value) {
     threshold = threshold * (1 - thrRate) + nthreshold * thrRate;
     threshold = fminf(maxValue, fmaxf(minValue, threshold));
 
-    if (currentValue > kFingerThreshold_0) {
-          finger_detected_0 = true;
-    }
+    if (currentValue >= threshold && lastValue < threshold
+        && (maxValue - minValue) > minDiff
+        && (HAL_GetTick() - lastHeartbeat) > 300) {
+        if (lastHeartbeat != 0) {
+            // Calculate BPM
+            int bpm = 60000 / (HAL_GetTick() - lastHeartbeat);
 
-    if (finger_detected_0) {
-		if (currentValue >= threshold && lastValue < threshold
-			&& (maxValue - minValue) > minDiff
-			&& (HAL_GetTick() - lastHeartbeat) > 300) {
-			if (lastHeartbeat != 0) {
-				// Calculate BPM
-					int bpm = 60000 / (HAL_GetTick() - lastHeartbeat);
-					lastHeartbeat = HAL_GetTick();
-					return (float)bpm;
-			}
-			lastHeartbeat = HAL_GetTick(); // Update the timestamp if a heartbeat is detected
-		}
+                lastHeartbeat = HAL_GetTick();
+                return bpm;
+        }
+        lastHeartbeat = HAL_GetTick(); // Update the timestamp if a heartbeat is detected
     }
 
     // Decay for max/min
@@ -56,6 +49,11 @@ float calculate_heart_rate(uint32_t latest_red_value) {
     return -1;
 
 }
+
+
+
+
+
 
 
 
@@ -107,7 +105,7 @@ float last_diff = NAN;
 bool crossed = false;
 long crossed_time = 0;
 
-float advanced_heartbeat_detection(uint32_t latest_red_value) {
+int advanced_heartbeat_detection(uint32_t latest_red_value) {
     float current_value = latest_red_value;
 
     // Detect Finger using raw sensor value
@@ -157,12 +155,12 @@ float advanced_heartbeat_detection(uint32_t latest_red_value) {
 
                             // Show if enough samples have been collected
                             if (averager.count > kSampleThreshold) {
-                                return (float)average_bpm;
+                                return average_bpm;
                             }
                         }
-                        else {
-                            printf("Heart Rate (current, bpm): %d\n", bpm);
-                        }
+//                        else {
+//                            printf("Heart Rate (current, bpm): %d\n", bpm);
+//                        }
                     }
                 }
 
@@ -334,14 +332,15 @@ float calculate_spo2(uint32_t latest_red_value, uint32_t latest_ir_value){
 //	            	  printf("Heart Rate (avg, bpm): %f\r\n", average_bpm);
 //	            	  printf("R-Value (avg): %f\r\n", average_r);
 	            	  return average_spo2;
+
 	              }
 	            }
-	            else {
+//	            else {
 //	            	printf("Time (ms): %ld\r\n", HAL_GetTick());
 //	            	printf("Heart Rate (current, bpm): %d\r\n", bpm);
 //	            	printf("R-Value (current): %f\r\n", r);
 //	            	printf("SpO2 (current, %%): %f\r\n", spo2);
-	            }
+//	            }
 	          }
 
 	          // Reset statistic
@@ -356,7 +355,7 @@ float calculate_spo2(uint32_t latest_red_value, uint32_t latest_ir_value){
 
 	    last_diff_spo2 = current_diff;
 	  }
-	  return -1.0f;
+	  return -1;
 }
 
 

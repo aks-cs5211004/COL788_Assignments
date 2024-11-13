@@ -19,8 +19,8 @@
 ../Core/Inc/filters.h:226:7:MovingAverageFilter_process	3
 ../Core/Inc/filters.h:249:6:MovingAverageFilter_reset	1
 ../Core/Inc/filters.h:258:5:MovingAverageFilter_count	1
-../Core/Src/max_processing.c:25:7:calculate_heart_rate	8
-../Core/Src/max_processing.c:91:6:initialize_filters_1	1
-../Core/Src/max_processing.c:110:7:advanced_heartbeat_detection	17
-../Core/Src/max_processing.c:228:6:initialize_filters_2	1
-../Core/Src/max_processing.c:261:7:calculate_spo2	17
+../Core/Src/max_processing.c:23:5:calculate_heart_rate	6
+../Core/Src/max_processing.c:89:6:initialize_filters_1	1
+../Core/Src/max_processing.c:108:5:advanced_heartbeat_detection	17
+../Core/Src/max_processing.c:226:6:initialize_filters_2	1
+../Core/Src/max_processing.c:259:7:calculate_spo2	17
