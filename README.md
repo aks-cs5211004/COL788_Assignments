@@ -24,6 +24,8 @@ Includes:
 - Manual modifications made to `main.c` and the `.ioc` file.
 - `.ioc` file:  
   - `Assignment2/code/laad.ioc`
+- `main.c` file:  
+  - `Assignment2/code/Core/Src`
 - Files in `Assignment2/code/Core/Inc`:
   - `max30102_for_stm32_hal.h`
   - `max_processing.h`
@@ -31,6 +33,7 @@ Includes:
   - `max30102_for_stm32_hal.c`
   - `max_processing.c`
   - `stm32l0xx_it.c` (modified to handle temperature interrupts).
+  
 
 ---
 
@@ -40,6 +43,8 @@ Includes:
 - Manual modifications made to `main.c` and the `.ioc` file to integrate the `FATFS` library.
 - `.ioc` file:  
   - `Assignment3/code/SD_card.ioc`
+- `main.c` file:  
+  - `Assignment3/code/Core/Src`
 
 ---
 
@@ -51,6 +56,8 @@ Includes:
 - Manual modifications made to `main.c` and the `.ioc` file to integrate the SD Card and Sensor.
 - `.ioc` file:  
   - `Assignment4/code/SD_card.ioc`
+- `main.c` file:  
+  - `Assignment4/code/Core/Src`
 
 ---
 
@@ -63,6 +70,8 @@ Includes:
 - Manual modifications made to `main.c` and the `.ioc` file to include the `FreeRTOS` library.
 - `.ioc` file:  
   - `Assignment5/code/assignment5.ioc`
+- `main.c` file:  
+  - `Assignment5/code/Core/Src`
 
 ---
 
