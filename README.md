@@ -38,5 +38,5 @@ The repository is divided into 5 subfolders:
 ## Hardware Requirements  
 1. **STM32 L073RZ Nucleo Board**  
 2. **BMP280 Sensor** (For assignment 1)
-3. **MAX30102 Sensor* (For Assignment 2,4 and 45)
+3. **MAX30102 Sensor** (For Assignment 2,4 and 45)
 4. **SD Card reader and SD Card(FAT32 formattable)** (For Assignments 3,4, and 5)
