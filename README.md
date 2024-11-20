@@ -75,6 +75,6 @@ Includes:
 
 ---
 
-## Git Issues
+# Git Issues
 
 Around 8 to 9 Git Issues have been raised. Issues marked as resolved are left open for reference in case others encounter similar errors.
