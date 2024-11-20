@@ -46,8 +46,8 @@ Includes:
 ### 4. **Assignment4/**
 Includes:
 - Complete source code located in the `code/` subfolder, including `main.c`.
-- Clean, handwritten diagram of the hardware connections.
-- Picture of the actual hardware setup.
+- Clean, handwritten diagram of the hardware connections: `Assignment4/Connections_Drawing.jpeg`.
+- Picture of the actual hardware setup: `Assignment4/Connections.jpeg`.
 - Manual modifications made to `main.c` and the `.ioc` file to integrate the SD Card and Sensor.
 - `.ioc` file:  
   - `Assignment4/code/SD_card.ioc`
@@ -59,7 +59,7 @@ Includes:
 - Complete source code located in the `code/` subfolder, including `main.c`.
 - Clean, handwritten diagram of the hardware connections: `Assignment5/Connections_Drawing.jpeg`.
 - Picture of the actual hardware setup: `Assignment5/Connections.jpeg`.
-- Logs for Heart Rate and Temperature data written to the SD Card.
+- Logs for Heart Rate and Temperature data written to the SD Card: `Assignment5/heart_rate_log.txt` and `Assignment5/temperature_log.txt`
 - Manual modifications made to `main.c` and the `.ioc` file to include the `FreeRTOS` library.
 - `.ioc` file:  
   - `Assignment5/code/assignment5.ioc`
