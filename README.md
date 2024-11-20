@@ -57,8 +57,8 @@ Includes:
 ### 5. **Assignment5/**
 Includes:
 - Complete source code located in the `code/` subfolder, including `main.c`.
-- Clean, handwritten diagram of the hardware connections.
-- Picture of the actual hardware setup.
+- Clean, handwritten diagram of the hardware connections: `Assignment5/Connections_Drawing.jpeg`.
+- Picture of the actual hardware setup: `Assignment5/Connections.jpeg`.
 - Logs for Heart Rate and Temperature data written to the SD Card.
 - Manual modifications made to `main.c` and the `.ioc` file to include the `FreeRTOS` library.
 - `.ioc` file:  
